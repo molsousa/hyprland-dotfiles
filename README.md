@@ -3,14 +3,17 @@
 Mistura de outros dotfiles com personalizações.
 
 
+
 ### [Waybar](https://github.com/cybrcore/cybr-waybar)
 
 ![Waybar](./images/2026-05-16-105408-211_hyprshot.png)
 
 
+
 ### [Wofi](https://github.com/7KIR7/dots/tree/main/wofi)
 
 ![Wofi](./images/2026-05-16-105720-653_hyprshot.png)
+
 
 
 ### Terminal
@@ -23,7 +26,9 @@ Mistura de outros dotfiles com personalizações.
 
 ![Hyprlock](./images/20260516_11h40m38s_grim.png)
 
-### Instalar AUR
+## Configuração do sistema
+
+### AUR
 
 ```sh
 sudo pacman -S --needed git base-devel
@@ -35,7 +40,7 @@ cd yay
 makepkg -si
 ```
 
-### Instalar pacotes
+### Pacotes
 
 - **Hyprpaper:** gerenciador de papel de parede.
 
@@ -47,13 +52,29 @@ makepkg -si
 
 - **Waybar:** barra de tarefas.
 
+- **Pulseaudio:** gerenciador de áudio.
+
+- **Bluez:** gerenciador do bluetooth.
+
 ```sh
-sudo pacman -S hyprpaper hyprlock wofi thunar waybar
+sudo pacman -S hyprpaper hyprlock wofi thunar waybar pulseaudio bluez
+```
+
+### Fontes
+
+```sh
+sudo pacman -S noto-fonts noto-fonts-emoji
+
+sudo pacman -S awesome-terminal-fonts
+
+sudo pacman -S ttf-jetbrains-mono-nerd
+
+yay -S ttf-geist-mono
 ```
 
 ### Caso não tenha o terminal
 
-- **Kitty:** Emulador de terminal acelerado por GPU.
+Emulador de terminal acelerado por GPU.
 
 ```sh
 sudo pacman -S kitty
