@@ -46,28 +46,48 @@ makepkg -si
 
 - **Hyprlock:** gerenciador de tela de bloqueio.
 
+- **Hyprshot:** aplicação pra captura de tela.
+
 - **Wofi:** lançador de aplicativos.
 
 - **Thunar:** gerenciador de arquivos.
 
 - **Waybar:** barra de tarefas.
 
-- **Pulseaudio:** gerenciador de áudio.
+- **Pipewire:** gerenciador de áudio.
 
 - **Bluez:** gerenciador do bluetooth.
 
 ```sh
-sudo pacman -S hyprpaper hyprlock wofi thunar waybar pulseaudio bluez
+sudo pacman -S hyprpaper
+
+sudo pacman -S hyprlock
+
+sudo pacman -S hyprshot-rs
+
+sudo pacman -S wofi
+
+sudo pacman -S thunar thunar-archive-plugin
+
+sudo pacman -S waybar
+
+sudo pacman -S pipewire
+
+sudo pacman -S bluez bluez-utils
 ```
 
 ### Fontes
 
 ```sh
-sudo pacman -S noto-fonts noto-fonts-emoji
+sudo pacman -S noto-fonts noto-fonts-emoji noto-fonts-cjk
 
-sudo pacman -S awesome-terminal-fonts
+sudo pacman -S ttf-liberation
 
 sudo pacman -S ttf-jetbrains-mono-nerd
+
+yay -S otf-font-awesome
+
+yay -S ttf-nerd-fonts-symbols
 
 yay -S ttf-geist-mono
 ```
@@ -86,4 +106,6 @@ Interpretador de comandos.
 
 ```sh
 sudo pacman -S zsh
+
+sudo pacman -S zsh-autosuggestions zsh-syntax-highlighting
 ```
