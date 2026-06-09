@@ -16,10 +16,18 @@
 
 -- See https://wiki.hypr.land/Configuring/Basics/Monitors/
 hl.monitor({
-    output   = "eDP-1",
-    mode     = "1920x1080@60",
-    position = "0x0",
-    scale    = "1",
+    output   	  = "",
+    mode     	  = "preferred",
+    position 	  = "0x0",
+    scale    	  = "1"
+})
+
+hl.monitor({
+	output = "",
+	mode = "preferred",
+	position = "auto",
+	scale = "1",
+	-- mirror = "eDP-1"
 })
 
 
@@ -28,9 +36,9 @@ hl.monitor({
 ---------------------
 
 -- Set programs that you use
-local terminal    = "kitty"
+local terminal    = "alacritty"
 local fileManager = "thunar"
-local menu        = "wofi --show drun --allow-images"
+local menu        = "hyprlauncher"
 local emojiPicker = "wofi-emoji"
 
 -------------------
@@ -50,21 +58,20 @@ hl.on("hyprland.start", function ()
    hl.exec_cmd("waybar & hyprpaper & dunst")
    hl.exec_cmd("gsettings set org.gnome.desktop.interface gtk-theme \"adw-gtk3-dark\"")
    hl.exec_cmd("gsettings set org.gnome.desktop.interface color-scheme \"prefer-dark\"")
+   hl.exec_cmd("hyprshade auto")
 end)
 
 ----------------
 ---- CURSOR ----
 ----------------
 
-local cursor_theme = "rose-pine-hyprcursor"
-
 hl.config({
 	cursor = {
-		enable_hyprcursor = true,
-		sync_gsettings_theme = true
+		enable_hyprcursor = false,
 	}
 })
 
+--[[
 hl.env("HYPRCURSOR_THEME", cursor_theme)
 hl.env("HYPRCURSOR_SIZE", 30)
 hl.env("XCURSOR_THEME", cursor_theme)
@@ -72,22 +79,26 @@ hl.env("XCURSOR_SIZE", 30)
 
 hl.exec_cmd("gsettings set org.gnome.desktop.interface cursor-theme ".. cursor_theme)
 hl.exec_cmd("gsettings set org.gnome.desktop.interface cursor-size 30")
-
+]]
 -------------------------------
 ---- ENVIRONMENT VARIABLES ----
 -------------------------------
 
 -- See https://wiki.hypr.land/Configuring/Advanced-and-Cool/Environment-variables/
 
+--[[
 hl.env("XCURSOR_SIZE", "30")
 hl.env("HYPRCURSOR_SIZE", "30")
 hl.env("HYPRCURSOR_SIZE", "30")
+]]
 hl.env("XDG_CURRENT_DESKTOP", "Hyprland")
 hl.env("XDG_SESSION_TYPE", "wayland")
 hl.env("XDG_SESSION_DESKTOP", "Hyprland")
 hl.env("SDL_VIDEO_DRIVER", "wayland")
 hl.env("MOZ_ENABLE_WAYLAND", "1")
 hl.env("QT_QPA_PLATFORMTHEME", "qt6ct")
+hl.env("XAPPLRESDIR", "")
+hl.env("XENVIRONMENT", "")
 
 -----------------------
 ----- PERMISSIONS -----
@@ -115,13 +126,13 @@ hl.env("QT_QPA_PLATFORMTHEME", "qt6ct")
 -- Refer to https://wiki.hypr.land/Configuring/Basics/Variables/
 hl.config({
     general = {
-        gaps_in  = 4,
+        gaps_in  = 3,
         gaps_out = 3,
 
         border_size = 2,
 
         col = {
-            active_border   = { colors = {"rgba(ca27f5cc)", "rgba(efb4ffcc)"}, angle = 45 },
+            active_border   = { colors = {"rgba(ff00ffcc)", "rgba(afcd95cc)"}, angle = 45 },
             inactive_border = "rgba(595959aa)",
         },
 
@@ -135,12 +146,12 @@ hl.config({
     },
 
     decoration = {
-        rounding       = 5,
-        rounding_power = 2.0,
+        rounding       = 10,
+        rounding_power = 3.0,
 
         -- Change transparency of focused and unfocused windows
         active_opacity   = 1.0,
-        inactive_opacity = 0.9,
+        inactive_opacity = 0.8,
 
         shadow = {
             enabled      = true,
@@ -175,7 +186,7 @@ hl.curve("easy",           { type = "spring", mass = 1, stiffness = 71.2633, dam
 hl.animation({ leaf = "global",        enabled = true,  speed = 10,   bezier = "default" })
 hl.animation({ leaf = "border",        enabled = true,  speed = 5.39, bezier = "easeOutQuint" })
 hl.animation({ leaf = "windows",       enabled = true,  speed = 4.79, spring = "easy" })
-hl.animation({ leaf = "windowsIn",     enabled = true,  speed = 4.1,  spring = "easy",         style = "popin 87%" })
+hl.animation({ leaf = "windowsIn",     enabled = true,  speed = 5.5,  spring = "easy",         style = "popin 87%" })
 hl.animation({ leaf = "windowsOut",    enabled = true,  speed = 1.49, bezier = "linear",       style = "popin 87%" })
 hl.animation({ leaf = "fadeIn",        enabled = true,  speed = 1.73, bezier = "almostLinear" })
 hl.animation({ leaf = "fadeOut",       enabled = true,  speed = 1.46, bezier = "almostLinear" })
@@ -186,8 +197,8 @@ hl.animation({ leaf = "layersOut",     enabled = true,  speed = 1.5,  bezier = "
 hl.animation({ leaf = "fadeLayersIn",  enabled = true,  speed = 1.79, bezier = "almostLinear" })
 hl.animation({ leaf = "fadeLayersOut", enabled = true,  speed = 1.39, bezier = "almostLinear" })
 hl.animation({ leaf = "workspaces",    enabled = true,  speed = 1.94, bezier = "almostLinear", style = "fade" })
-hl.animation({ leaf = "workspacesIn",  enabled = true,  speed = 1.21, bezier = "almostLinear", style = "fade" })
-hl.animation({ leaf = "workspacesOut", enabled = true,  speed = 1.94, bezier = "almostLinear", style = "fade" })
+hl.animation({ leaf = "workspacesIn",  enabled = true,  speed = 1.21, bezier = "almostLinear", style = "slide" })
+hl.animation({ leaf = "workspacesOut", enabled = true,  speed = 1.94, bezier = "almostLinear", style = "slide" })
 hl.animation({ leaf = "zoomFactor",    enabled = true,  speed = 7,    bezier = "quick" })
 
 -- Ref https://wiki.hypr.land/Configuring/Basics/Workspace-Rules/
@@ -218,7 +229,9 @@ hl.config({
 -- See https://wiki.hypr.land/Configuring/Layouts/Master-Layout/ for more
 hl.config({
     master = {
+	allow_small_split = true,
         new_status = "master",
+	orientation = "left"
     },
 })
 
@@ -255,10 +268,11 @@ hl.config({
 
         follow_mouse = 1,
 
-        sensitivity = 0, -- -1.0 - 1.0, 0 means no modification.
+        sensitivity = 0.3, -- -1.0 - 1.0, 0 means no modification.
 
         touchpad = {
             natural_scroll = true,
+	    disable_while_typing = true,
         },
     },
 })
@@ -267,6 +281,12 @@ hl.gesture({
     fingers = 3,
     direction = "horizontal",
     action = "workspace"
+})
+
+hl.gesture({
+	fingers = 3,
+	direction = "down",
+	action = "close"
 })
 
 -- Example per-device config
@@ -322,12 +342,12 @@ hl.bind(mainMod .. " + mouse_down", hl.dsp.focus({ workspace = "e+1" }))
 hl.bind(mainMod .. " + mouse_up",   hl.dsp.focus({ workspace = "e-1" }))
 
 -- Move/resize windows with mainMod + LMB/RMB and dragging
-hl.bind(mainMod .. " + mouse:272", hl.dsp.window.drag(),   { mouse = true })
-hl.bind(mainMod .. " + mouse:273", hl.dsp.window.resize(), { mouse = true })
+hl.bind(mainMod .. " + mouse:272", 	   hl.dsp.window.drag(),   { mouse = true })
+hl.bind(mainMod .. " + SHIFT + mouse:272", hl.dsp.window.resize(), { mouse = true })
 
 -- Laptop multimedia keys for volume and LCD brightness
-hl.bind("XF86AudioRaiseVolume", hl.dsp.exec_cmd("wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+"), { locked = true, repeating = true })
-hl.bind("XF86AudioLowerVolume", hl.dsp.exec_cmd("wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"),      { locked = true, repeating = true })
+hl.bind("XF86AudioRaiseVolume", hl.dsp.exec_cmd("wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 6%+"), { locked = true, repeating = true })
+hl.bind("XF86AudioLowerVolume", hl.dsp.exec_cmd("wpctl set-volume @DEFAULT_AUDIO_SINK@ 6%-"),      { locked = true, repeating = true })
 hl.bind("XF86AudioMute",        hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"),     { locked = true, repeating = true })
 hl.bind("XF86AudioMicMute",     hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"),   { locked = true, repeating = true })
 hl.bind("XF86MonBrightnessUp",  hl.dsp.exec_cmd("brightnessctl -e4 -n2 set 5%+"),                  { locked = true, repeating = true })

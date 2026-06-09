@@ -6,25 +6,25 @@ Mistura de outros dotfiles com personalizações.
 
 ### [Waybar](https://github.com/cybrcore/cybr-waybar)
 
-![Waybar](./images/2026-05-16-105408-211_hyprshot.png)
+![Waybar](./images/waybar.png)
 
 
 
-### [Wofi](https://github.com/7KIR7/dots/tree/main/wofi)
+### [Hyprlauncher](https://github.com/7KIR7/dots/tree/main/wofi)
 
-![Wofi](./images/2026-05-16-105720-653_hyprshot.png)
+![Hyprlauncher](./images/hyprlauncher.png)
 
 
 
 ### Terminal
 
-![Terminal](./images/2026-05-16-110058-178_hyprshot.png)
+![Terminal](./images/alacritty.png)
 
 
 
 ### [Hyprlock](https://github.com/MrVivekRajan/Hyprlock-Styles/tree/main/Style-9)
 
-![Hyprlock](./images/20260516_11h40m38s_grim.png)
+![Hyprlock](./images/hyprlock.png)
 
 ## Configuração do sistema
 
@@ -48,7 +48,7 @@ makepkg -si
 
 - **Hyprshot:** aplicação pra captura de tela.
 
-- **Wofi:** lançador de aplicativos.
+- **Hyprlauncher:** lançador de aplicativos.
 
 - **Thunar:** gerenciador de arquivos.
 
@@ -65,7 +65,7 @@ sudo pacman -S hyprlock
 
 sudo pacman -S hyprshot-rs
 
-sudo pacman -S wofi
+sudo pacman -S hyprlauncher
 
 sudo pacman -S thunar thunar-archive-plugin
 
@@ -97,7 +97,7 @@ yay -S ttf-geist-mono
 Emulador de terminal acelerado por GPU.
 
 ```sh
-sudo pacman -S kitty
+sudo pacman -S alacritty
 ```
 
 ### Caso não tenha o zsh

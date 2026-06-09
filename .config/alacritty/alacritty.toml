@@ -1,0 +1,71 @@
+[scrolling]
+history = 10000
+multiplier = 3
+
+[window.class]
+general = "Alacritty"
+instance = "Alacritty"
+
+[window]
+opacity = 0.5
+blur = true
+
+[window.padding]
+x = 5
+y = 5
+
+[font.normal]
+family = "Monospaced"
+style = "Plain"
+
+[font.bold]
+family = "Monospaced"
+style = "Bold"
+
+[font.italic]
+family = "Monospaced"
+style = "Italic"
+
+[font]
+size = 11.5
+
+[colors.search]
+matches = {foreground = "#242424", background = "#f4bf75"}
+
+[colors.hints]
+start = { foreground = "#242424", background = "#fe27fe" }
+end = 	{ foreground = "#242424", background = "#ff4848" }
+
+[colors.normal]
+black = "#151515"
+red = "#d84545"
+green = "#55c755"
+yellow = "#eff639"
+blue = "#4848bc"
+magenta = "#c343b6"
+cyan = "#24a8a8"
+white = "#f5f5f5"
+
+[colors.bright]
+black = "#767676"
+red = "#dd7272"
+green = "#87ff87"
+yellow = "#ffff32"
+blue = "#3838dd"
+magenta = "#fe27fe"
+cyan = "#32ffff"
+white = "#ffffff"
+
+[cursor.style]
+shape = "Beam"
+blinking = "On"
+
+[mouse]
+hide_when_typing = true
+
+[keyboard] 
+bindings = [
+	{ key = "ArrowUp", 	mods = "Control|Shift", 	action = "ScrollHalfPageUp" },
+	{ key = "ArrowDown", 	mods = "Control|Shift", 	action = "ScrollHalfPageDown"}
+
+]
