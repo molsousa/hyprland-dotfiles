@@ -4,13 +4,13 @@ Mistura de outros dotfiles com personalizações.
 
 
 
-### [Waybar](https://github.com/cybrcore/cybr-waybar)
+### [Waybar](https://github.com/haikal-hakim/athena/tree/main/.config/waybar)
 
 ![Waybar](./images/waybar.png)
 
 
 
-### [Hyprlauncher](https://github.com/7KIR7/dots/tree/main/wofi)
+### Hyprlauncher
 
 ![Hyprlauncher](./images/hyprlauncher.png)
 
