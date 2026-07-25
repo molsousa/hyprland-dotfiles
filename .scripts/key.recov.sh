@@ -1,3 +1,5 @@
+#!/bin/bash
+
 sudo rm -rf /var/lib/pacman/sync/*
 sudo pacman -Syy
 sudo pacman-key --refresh-keys

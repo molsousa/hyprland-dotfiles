@@ -1,3 +1,5 @@
+#!/bin/bash
+
 nmcli connection add \
 connection.id eduroam \
 connection.type 802-11-wireless \
