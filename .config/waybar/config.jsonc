@@ -1,5 +1,6 @@
 {
   "layer": "top",
+  "position": "top",
   "height": 42,
   "spacing": 2,
   "include": [

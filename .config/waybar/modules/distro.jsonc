@@ -9,13 +9,13 @@
     "tooltip": false
   },
   "custom/code": {
-    "format": "",
+    "format": "",
     "on-click": "code",
     "tooltip": false
   },
   "custom/obsidian": {
     "format": "󰹕",
-    "on-click": "obsidian",
+    "on-click": "joplin-desktop",
     "tooltip": false
   },/*
   "custom/office": {
@@ -34,8 +34,8 @@
     "tooltip": false
   },*/
   "custom/browser": {
-    "format": "",
-    "on-click": "firefox-developer-edition",
+    "format": "󰈹",
+    "on-click": "firefox",
     "tooltip": false
   }
 }

@@ -7,7 +7,7 @@ general = "Alacritty"
 instance = "Alacritty"
 
 [window]
-opacity = 0.5
+opacity = 0.55
 blur = true
 
 [window.padding]
@@ -65,7 +65,8 @@ hide_when_typing = true
 
 [keyboard] 
 bindings = [
-	{ key = "ArrowUp", 	mods = "Control|Shift", 	action = "ScrollHalfPageUp" },
-	{ key = "ArrowDown", 	mods = "Control|Shift", 	action = "ScrollHalfPageDown"}
-
+	{ key = "ArrowUp", 	mods = "Control|Shift", 	action = "ScrollLineUp" },
+	{ key = "ArrowDown", 	mods = "Control|Shift", 	action = "ScrollLineDown"},
+	{ key = "Home",						action = "ScrollToTop"},
+	{ key = "End", 		 				action = "ScrollToBottom"}
 ]

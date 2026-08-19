@@ -3,7 +3,7 @@
     "tooltip": false,
     "interval": 10,
     "format": "󰻠",
-    "format-alt": "󰻠 <span size='11pt'>{usage}%</span>",
+    "format-alt": "󰻠  <span size='11pt'>{usage}%</span>",
     "states": {
       "warning": 75,
       "critical": 90

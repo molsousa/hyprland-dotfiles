@@ -8,13 +8,16 @@
     "window-rewrite-default": "󰊠",
     "window-rewrite": {
       // --- Work ---
-      "kitty": "󰆍",
-      "onlyoffice": "󰏆",
-      "firefox": "",
-      "code": "󰨞",
+      "alacritty": "",
+      "libreoffice": "󰏆",
+      "keepassxc": "󰯄",
+      "firefox": "󰈹",
+      "code": "",
       "azahar": "",
-      "obsidian": "󰹕",
+      "joplin": "󰹕",
       "mousepad": "󱓧",
+      "thunderbird": "",
+      "kdevelop": "",
       // --- Apps ---
       "discord": "",
       "spotify": "",
@@ -29,10 +32,13 @@
       "org.gnome.FileRoller": "",
       "vlc": "󰕼",
       "mpv": "󰕼",
+      "dbeaver": "",
+      "netbeans": "",
       // --- System ---
       "blueman-manager": "",
       "pavucontrol": "󱕂",
       "nm-connection-editor": "󰐻",
+      "virtualbox": "",
       // --- Tool ---
       "nwg-look": "󰒓",
       "qt5ct": "󰒓",

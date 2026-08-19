@@ -23,11 +23,12 @@ hl.monitor({
 })
 
 hl.monitor({
-	output = "",
-	mode = "preferred",
-	position = "auto",
-	scale = "1",
-	-- mirror = "eDP-1"
+	output 		= "",
+	mode 		= "preferred",
+	position 	= "0x0",
+	scale 		= "1",
+	 mirror	    = "eDP-1",
+    vrr         = 0
 })
 
 
@@ -36,17 +37,17 @@ hl.monitor({
 ---------------------
 
 -- Set programs that you use
-local terminal    = "alacritty"
-local fileManager = "thunar"
-local menu        = "hyprlauncher"
-local emojiPicker = "wofi-emoji"
-local emailClient = "thunderbird"
-local notesClient = "joplin-desktop"
-local passwordClient = "keepassxc"
-local browserDefault = "firefox-developer-edition"
-local codeDefault = "code"
-local cursor_theme = "Bibata-Modern-Classic"
-local cursor_size = 24
+local terminal    	= "alacritty"
+local fileManager 	= "thunar"
+local menu        	= "hyprlauncher"
+local emojiPicker 	= "wofi-emoji"
+local emailClient 	= "thunderbird"
+local notesClient 	= "joplin-desktop"
+local passwordClient 	= "keepassxc"
+local browserDefault 	= "firefox"
+local codeDefault 	= "code"
+local cursor_theme 	= "Sunity-cursors"
+local cursor_size 	= 28
 
 -------------------
 ---- AUTOSTART ----
@@ -58,17 +59,14 @@ local cursor_size = 24
 -- Or execute your favorite apps at launch like this:
 --
 hl.on("hyprland.start", function () 
---   hl.exec_cmd(terminal)
---   hl.exec_cmd("nm-applet")
-   hl.exec_cmd("hyprctl setcursor " .. cursor_theme .. " " .. cursor_size)
    hl.exec_cmd("dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP")
    hl.exec_cmd("systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP")
    hl.exec_cmd("waybar & hyprpaper & dunst")
---   hl.exec_cmd("hyprlauncher -d")
    hl.exec_cmd("gsettings set org.gnome.desktop.interface gtk-theme \"adw-gtk3-dark\"")
    hl.exec_cmd("gsettings set org.gnome.desktop.interface color-scheme \"prefer-dark\"")
    hl.exec_cmd("hyprshade auto")
 end)
+   hl.exec_cmd("udiskie &")
 
 ----------------
 ---- CURSOR ----
@@ -130,14 +128,14 @@ hl.env("HYPRSHOT_DIR", "/home/molsousa/Pictures/Screenshots")
 -- Refer to https://wiki.hypr.land/Configuring/Basics/Variables/
 hl.config({
     general = {
-        gaps_in  = 3,
+        gaps_in  = 2,
         gaps_out = 4,
 
         border_size = 2,
 
         col = {
             active_border   = {colors = {"rgba(0bccdfff)", "rgba(de15dcff)"}, angle=45},
-            inactive_border = {colors = {"rgba(595959aa)", "rgba(dedededd)"}, angle=60}
+            inactive_border = {colors = {"rgba(dfdfdfcc)", "rgba(89ffa0ee)"}, angle=30}
         },
 
         -- Set to true to enable resizing windows by clicking and dragging on borders and gaps
@@ -146,29 +144,29 @@ hl.config({
         -- Please see https://wiki.hypr.land/Configuring/Advanced-and-Cool/Tearing/ before you turn this on
         allow_tearing = false,
 
-        layout = "dwindle",
+        layout = "master", -- dwindle / master / scrolling
     },
 
     decoration = {
-        rounding       = 10,
-        rounding_power = 7.0,
+	rounding 	= 10,
+        rounding_power 	= 5.0,
 
         -- Change transparency of focused and unfocused windows
         active_opacity   = 1.0,
-        inactive_opacity = 0.8,
+        inactive_opacity = 0.85,
 
         shadow = {
             enabled      = false,
             range        = 4,
-            render_power = 6,
+            render_power = 10,
             color        = 0xee1a1a1a,
         },
 
         blur = {
             enabled   = true,
-            size      = 8,
+            size      = 5,
             passes    = 3,
-            vibrancy  = 0.1696,
+            vibrancy  = 0.1300,
         },
     },
 
@@ -183,27 +181,31 @@ hl.curve("easeInOutCubic", { type = "bezier", points = { {0.65, 0.05}, {0.36, 1}
 hl.curve("linear",         { type = "bezier", points = { {0, 0},       {1, 1}       } })
 hl.curve("almostLinear",   { type = "bezier", points = { {0.5, 0.5},   {0.75, 1}    } })
 hl.curve("quick",          { type = "bezier", points = { {0.15, 0},    {0.1, 1}     } })
+hl.curve("overshoot", 	   { type = "bezier", points = { {0.5, 0.9},   {0.1, 1.1}   } })
 
 -- Default springs
-hl.curve("easy",           { type = "spring", mass = 1, stiffness = 71.2633, dampening = 15.8273644 })
+hl.curve("easy",           { type = "spring", mass = 1, stiffness = 71.2633, 	dampening = 15.8273644 	})
+hl.curve("rubber", 	   { type = "spring", mass = 1, stiffness = 85, 	dampening = 15 		})
 
-hl.animation({ leaf = "global",        enabled = true,  speed = 10,   bezier = "default" })
-hl.animation({ leaf = "border",        enabled = true,  speed = 5.39, bezier = "easeOutQuint" })
-hl.animation({ leaf = "windows",       enabled = true,  speed = 2.79, spring = "easy" })
-hl.animation({ leaf = "windowsIn",     enabled = true,  speed = 5.5,  spring = "easy",         style = "popin 87%" })
-hl.animation({ leaf = "windowsOut",    enabled = true,  speed = 5.49, bezier = "linear",       style = "popin 87%" })
-hl.animation({ leaf = "fadeIn",        enabled = true,  speed = 1.23, bezier = "almostLinear" })
-hl.animation({ leaf = "fadeOut",       enabled = true,  speed = 1.26, bezier = "almostLinear" })
-hl.animation({ leaf = "fade",          enabled = true,  speed = 2.03, bezier = "quick" })
-hl.animation({ leaf = "layers",        enabled = true,  speed = 1.81, bezier = "easeOutQuint" })
-hl.animation({ leaf = "layersIn",      enabled = true,  speed = 2,    bezier = "easeOutQuint", style = "fade" })
-hl.animation({ leaf = "layersOut",     enabled = true,  speed = 3.5,  bezier = "linear",       style = "fade" })
-hl.animation({ leaf = "fadeLayersIn",  enabled = true,  speed = 1.79, bezier = "almostLinear" })
-hl.animation({ leaf = "fadeLayersOut", enabled = true,  speed = 1.39, bezier = "almostLinear" })
-hl.animation({ leaf = "workspaces",    enabled = true,  speed = 1.94, bezier = "almostLinear", style = "fade" })
-hl.animation({ leaf = "workspacesIn",  enabled = true,  speed = 2.51, bezier = "almostLinear", style = "slide" })
-hl.animation({ leaf = "workspacesOut", enabled = true,  speed = 2.51, bezier = "almostLinear", style = "slide" })
-hl.animation({ leaf = "zoomFactor",    enabled = true,  speed = 7,    bezier = "quick" })
+hl.animation({ leaf = "global",        	     enabled = true,  speed = 10,   	bezier = "default" })
+hl.animation({ leaf = "border",        	     enabled = true,  speed = 2.39, 	bezier = "easeOutQuint" })
+hl.animation({ leaf = "windows",       	     enabled = true,  speed = 1, 	spring = "rubber" })
+hl.animation({ leaf = "windowsIn",     	     enabled = true,  speed = 1,  	spring = "rubber",         	style = "popin 90%" })
+hl.animation({ leaf = "windowsOut",    	     enabled = true,  speed = 1, 	bezier = "almostLinear",       	style = "popin 90%" })
+hl.animation({ leaf = "fadeIn",        	     enabled = true,  speed = 1.23, 	bezier = "almostLinear" })
+hl.animation({ leaf = "fadeOut",       	     enabled = true,  speed = 1.26, 	bezier = "almostLinear" })
+hl.animation({ leaf = "fade",          	     enabled = true,  speed = 2.03, 	bezier = "quick" })
+hl.animation({ leaf = "layers",        	     enabled = true,  speed = 1.81, 	bezier = "easeOutQuint" })
+hl.animation({ leaf = "layersIn",      	     enabled = true,  speed = 2,    	bezier = "easeOutQuint", 	style = "fade" })
+hl.animation({ leaf = "layersOut",     	     enabled = true,  speed = 2.5,  	bezier = "linear",       	style = "fade" })
+hl.animation({ leaf = "fadeLayersIn",        enabled = true,  speed = 1.79, 	bezier = "almostLinear" })
+hl.animation({ leaf = "fadeLayersOut", 	     enabled = true,  speed = 1.39, 	bezier = "almostLinear" })
+hl.animation({ leaf = "workspaces",          enabled = true,  speed = 1.94, 	bezier = "almostLinear", 	style = "slidevert" })
+hl.animation({ leaf = "workspacesIn",  	     enabled = true,  speed = 5, 	bezier = "overshoot", 		style = "slidevertfade" })
+hl.animation({ leaf = "workspacesOut", 	     enabled = true,  speed = 5, 	bezier = "overshoot", 		style = "slidevertfade" })
+hl.animation({ leaf = "zoomFactor",    	     enabled = true,  speed = 5,    	bezier = "quick" })
+hl.animation({ leaf = "specialWorkspaceIn",  enabled = true,  speed = 2.51, 	bezier = "linear", 		style = "fade" })
+hl.animation({ leaf = "specialWorkspaceOut", enabled = true,  speed = 2.51, 	bezier = "linear", 		style = "fade" }) 
 
 -- Ref https://wiki.hypr.land/Configuring/Basics/Workspace-Rules/
 -- "Smart gaps" / "No gaps when only"
@@ -227,15 +229,18 @@ hl.animation({ leaf = "zoomFactor",    enabled = true,  speed = 7,    bezier = "
 hl.config({
     dwindle = {
         preserve_split = true, -- You probably want this
+	force_split = 0,
+	smart_split = false,
     },
 })
 
 -- See https://wiki.hypr.land/Configuring/Layouts/Master-Layout/ for more
 hl.config({
     master = {
-	allow_small_split = true,
-        new_status = "master",
-	orientation = "left"
+	allow_small_split = 	true,
+	mfact =			0.6,
+        new_status = 		"slave",
+	orientation = 		"left"
     },
 })
 
@@ -252,8 +257,8 @@ hl.config({
 
 hl.config({
     misc = {
-        force_default_wallpaper = 0,    -- Set to 0 or 1 to disable the anime mascot wallpapers
-        disable_hyprland_logo   = true, -- If true disables the random hyprland logo / anime girl background. :(
+        force_default_wallpaper = 1,    -- Set to 0 or 1 to disable the anime mascot wallpapers
+        disable_hyprland_logo   = false, -- If true disables the random hyprland logo / anime girl background. :(
     },
 })
 
@@ -339,6 +344,8 @@ hl.bind(mainMod .. " + SHIFT + left", 	hl.dsp.window.move({direction = "left"}))
 hl.bind(mainMod .. " + SHIFT + right", 	hl.dsp.window.move({direction = "right"}))
 hl.bind(mainMod .. " + SHIFT + up", 	hl.dsp.window.move({direction = "up"}))
 hl.bind(mainMod .. " + SHIFT + down", 	hl.dsp.window.move ({direction = "down"}))
+
+hl.bind("SUPER + W", hl.dsp.exec_cmd("pgrep -x waybar && killall waybar || waybar"))
 
 -- Switch workspaces with mainMod + [0-9]
 -- Move active window to a workspace with mainMod + SHIFT + [0-9]
