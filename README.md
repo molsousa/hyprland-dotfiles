@@ -26,6 +26,24 @@ Mistura de outros dotfiles com personalizações.
 
 ![Hyprlock](./images/hyprlock.png)
 
+## Plugins 
+
+- ### [hyprland-scroll-overview](https://github.com/yayuuu/hyprland-scroll-overview)
+
+Plugin para ter uma visão dos espaços de trabalhos em forma de 'scroll'.
+
+- ### [split-monitor-workspaces](https://github.com/zjeffer/split-monitor-workspaces)
+
+Plugin para separar espaços de trabalhos em diferentes monitores, pode ajudar em apresentações de slides!!
+
+- ### [hypr-kinetic-scroll](https://github.com/savonovv/hypr-kinetic-scroll)
+
+Plugin para melhorar funcionamento do scroll em touchpad.
+
+## Hyprland
+
+[Clique aqui para visualizar a divisão de arquivos das configurações definidas para o Hyprland](.config/hypr/modules/)
+
 ## Configuração do sistema
 
 ### AUR
@@ -50,6 +68,8 @@ makepkg -si
 
 - **Hyprlauncher:** lançador de aplicativos.
 
+- **Hyprpm:** utilitário para uso de plugins.
+
 - **Thunar:** gerenciador de arquivos.
 
 - **Waybar:** barra de tarefas.
@@ -66,6 +86,8 @@ sudo pacman -S hyprlock
 sudo pacman -S hyprshot-rs
 
 sudo pacman -S hyprlauncher
+
+sudo pacman -S hyprpm
 
 sudo pacman -S thunar thunar-archive-plugin
 
