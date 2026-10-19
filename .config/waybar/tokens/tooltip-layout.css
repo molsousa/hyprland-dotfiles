@@ -1,0 +1,27 @@
+@import "colors.css";
+
+tooltip {
+    background:
+        linear-gradient(@surface_container, @surface_container) padding-box,
+        linear-gradient(135deg, #65f0fa, #ff00ff) border-box;
+    border: 0.2rem solid transparent;
+    border-radius: 10px;
+    opacity: 0.9;
+}
+
+tooltip label {
+    color: @secondary_fixed_dim;
+    padding: 8px 12px;
+    border-radius: 8px;
+    font-family: "Cantarell";
+    font-size: 1.007em;
+}
+
+tooltip box {
+    padding: 1px 1px;
+}
+
+menu menuitem:disabled {
+    color: #aaaaaa;
+    opacity: 0.9;  
+}

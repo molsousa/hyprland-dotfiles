@@ -1,4 +1,5 @@
 {
+/*
   "disk": {
     "tooltip": false,
     "interval": 3600,
@@ -9,7 +10,7 @@
       "warning": 80,
       "critical": 90
     }
-  },
+  },*/
   "memory": {
     "tooltip": false,
     "interval": 15,

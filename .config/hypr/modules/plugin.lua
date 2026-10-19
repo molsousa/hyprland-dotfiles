@@ -4,11 +4,12 @@
 
 local mainMod = "SUPER"
 
+-- SplitMonitorWorkspaces
 package.path = package.path .. ";./?.lua;./?/init.lua"
 local smw = require("plugins.split-monitor-workspaces")
 
 smw.setup({
-    workspace_count = 4, -- This will create 5 persistent workspaces on each monitor at startup
+    workspace_count = 5, -- This will create 5 persistent workspaces on each monitor at startup
 })
 
 for i = 1, smw.get_amount_of_workspaces() do
@@ -20,6 +21,7 @@ for i = 1, smw.get_amount_of_workspaces() do
     hl.bind(mainMod .. " + SHIFT +" .. n, smw.move_to_workspace_silent(n))
 end
 
+-- ScrollOverview
 hl.config({
     plugin = {
         scrolloverview = {
@@ -42,5 +44,4 @@ hl.config({
 hl.bind(mainMod .. " + g", function()
     hl.plugin.scrolloverview.overview("toggle all")
 end)
-
 

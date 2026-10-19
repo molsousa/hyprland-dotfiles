@@ -2,14 +2,41 @@
 <actions>
 <action>
 	<icon>utilities-terminal</icon>
-	<name>Open Terminal Here</name>
+	<name>Abrir Terminal Aqui</name>
 	<submenu></submenu>
 	<unique-id>1778719209517749-1</unique-id>
-	<command>exo-open --working-directory %f --launch TerminalEmulator</command>
-	<description>Example for a custom action</description>
+	<command>alacritty --working-directory %f</command>
+	<description>Abre o terminal Alacritty na pasta atual.</description>
 	<range></range>
 	<patterns>*</patterns>
 	<startup-notify/>
+	<directories/>
+</action>
+<action>
+	<icon>git</icon>
+	<name>Ocultar Ignorados pelo Git</name>
+	<submenu></submenu>
+	<unique-id>1788431499825908-1</unique-id>
+	<command>~/.local/bin/hide-gitignored %f</command>
+	<description>Esconde arquivos do .gitignore.</description>
+	<range>*</range>
+	<patterns>*</patterns>
+	<directories/>
+	<audio-files/>
+	<image-files/>
+	<other-files/>
+	<text-files/>
+	<video-files/>
+</action>
+<action>
+	<icon>git</icon>
+	<name>Mostrar Todos os Arquivos</name>
+	<submenu></submenu>
+	<unique-id>1788431646846744-2</unique-id>
+	<command>rm -f %f/.hidden</command>
+	<description>Mostra arquivos, mesmo ignorados pelo .gitignore.</description>
+	<range>*</range>
+	<patterns>*</patterns>
 	<directories/>
 </action>
 </actions>

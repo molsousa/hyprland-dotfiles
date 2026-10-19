@@ -1,0 +1,7 @@
+#custom-workspace-layout {
+    padding: 6px 12px;
+    color: @secondary_fixed_dim;
+    background-color: @surface_container;
+    border-radius: 20px;
+    margin: 4px 4px;
+}

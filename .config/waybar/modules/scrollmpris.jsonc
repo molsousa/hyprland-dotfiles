@@ -1,0 +1,10 @@
+{
+    "custom/ScrollMPRIS": {
+        "return-type": "json",
+        "exec": "ScrollMPRIS",
+        "escape": true,
+        "on-click": "playerctl play-pause",
+        "on-scroll-up": "playerctl next",
+        "on-scroll-down": "playerctl previous"
+    }
+}

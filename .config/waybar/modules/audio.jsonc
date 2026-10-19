@@ -12,7 +12,7 @@
         ""
       ]
     },
-    "on-click": "pavucontrol",
+    "on-click": "hyprpwcenter",
     "tooltip-format": "Output: {volume}%"
   },
   "pulseaudio#microphone": {

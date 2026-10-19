@@ -3,7 +3,15 @@
     "timezone": "America/Sao_Paulo",
     "format": "  <span size='11pt'>{:%H:%M }</span>",
     "format-alt": "󰃱  <span size='11pt'>{:L%A, %d/%b/%Y}</span>",
-    "tooltip-format": "<tt><small>{calendar}</small></tt>",
+    "tooltip-format": "<tt>{calendar}</tt>",
+    "calendar": {
+        "mode": "month",
+        "format": {
+            "months": "<span color='#e5c07b'><b>{}</b></span>",
+            "weekdays": "<span color='#c678dd'><b>{}</b></span>",
+            "today": "<span color='#61afef'><b><u>{}</u></b></span>"
+        }
+    },
     "locale": "pt_BR.UTF-8"
   }
 }

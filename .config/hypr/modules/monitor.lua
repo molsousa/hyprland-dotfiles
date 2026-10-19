@@ -12,7 +12,7 @@ hl.monitor({
 
 hl.monitor({
 	output 		= "",
-	mode 		= "highres highrr maxwidth",
+	mode 		= "1600x900@60", -- "highres highrr maxwidth",
 	position 	= "auto",
 	scale 		= "1",
 	--mirror	    = "eDP-1",

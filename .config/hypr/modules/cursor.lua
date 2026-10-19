@@ -3,7 +3,7 @@
 ----------------
 
 local cursor_theme 	    = "Simp1e-Tokyo-Night"
-local cursor_size 	    = 28
+local cursor_size 	    = 24
 
 hl.config({
 	cursor = {

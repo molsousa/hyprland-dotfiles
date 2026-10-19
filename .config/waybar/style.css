@@ -4,6 +4,12 @@
 @import "tokens/widget.css";
 @import "tokens/batt-clock.css";
 @import "tokens/slider.css";
+@import "tokens/mpris.css";
+@import "tokens/weather.css";
+@import "tokens/menu.css";
+@import "tokens/tooltip-layout.css";
+@import "tokens/scrollmpris.css";
+@import "tokens/workspace-layout.css";
 
 * {
   margin: 0;

@@ -1,0 +1,8 @@
+{
+    "custom/workspace-layout": {
+        "exec": "~/.scripts/workspace-layout.sh",
+        "interval": 1,
+        "format": "{}",
+        "tooltip": false,
+    }
+}

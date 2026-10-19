@@ -1,3 +1,5 @@
+#!/bin/bash
+
 tar xvf Simp1e-Tokyo-Night.tar.gz -C ~/.local/share/icons
 
 sudo nvim /etc/environment

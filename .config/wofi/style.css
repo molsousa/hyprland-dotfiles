@@ -1,0 +1,53 @@
+window {
+    font-family: "JetbrainsMonoNFM Nerd";
+    font-size: 1.07rem;
+    font-weight: normal;
+    margin: 0px;
+    border: 1px solid rgba(0, 0, 0, 0.7);
+    background-color: rgba(12, 46, 57, 0.85);
+    border-radius: 10px;
+}
+
+#input {
+    margin: 5px;
+    border: none;
+    color: #f8f8f2;
+    background-color: rgba(17, 132, 152, 0.7);
+}
+
+#inner-box {
+    margin: 5px;
+    border: none;
+    background-color: transparent;
+}
+
+#outer-box {
+    margin: 5px;
+    border: none;
+    background-color: transparent;
+}
+
+#scroll {
+    margin: 0px;
+    border: none;
+}
+
+#text {
+    margin: 5px;
+    border: none;
+    color: #c5c8c6;
+}
+
+#entry {
+    border: none;
+}
+
+#entry:focus {
+    border: none;
+}
+
+#entry:selected {
+    background-color: rgba(140, 18, 131, 0.6);
+    border-radius: 5px;
+    border: none;
+}

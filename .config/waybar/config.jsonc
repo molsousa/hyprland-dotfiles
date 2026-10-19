@@ -15,17 +15,21 @@
     "./modules/connections.jsonc",
     "./modules/battery.jsonc",
     "./modules/clock.jsonc",
-    "./modules/tray-notif.jsonc"
+    "./modules/tray-notif.jsonc",
+    "./modules/mpris.jsonc",
+    "./modules/scrollmpris.jsonc",
+    "./modules/weather.jsonc",
+    "./modules/workspace-layout.jsonc"
   ],
   "modules-left": [
     "group/distro-group",
-    "group/storage",
-    "group/system"
+    "custom/workspace-layout",
+    "custom/ScrollMPRIS"
   ],
   "modules-center": [
     "power-profiles-daemon",
     "hyprland/workspaces",
-    "idle_inhibitor"
+    "custom/weather"
   ],
   "modules-right": [
     "group/audio",

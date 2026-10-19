@@ -1,22 +1,24 @@
 {
   "custom/distro": {
     "format": "",
-    "tooltip": false
+    "on-click": "wofi --show drun -I",
+    "on-click-right": "hyprshutdown",
+    "tooltip-format": "archlinux"
   },
   "custom/terminal": {
     "format": "󰆍",
     "on-click": "alacritty",
-    "tooltip": false
+    "tooltip-format": "alacritty"
   },
   "custom/code": {
     "format": "",
     "on-click": "code",
-    "tooltip": false
+    "tooltip-format": "Code-OSS"
   },
   "custom/obsidian": {
     "format": "󰹕",
     "on-click": "joplin-desktop",
-    "tooltip": false
+    "tooltip-format": "Joplin"
   },/*
   "custom/office": {
     "format": "󰏆",
@@ -26,7 +28,7 @@
   "custom/files": {
     "format": "",
     "on-click": "thunar",
-    "tooltip": false
+    "tooltip-format": "Thunar"
   },/*
   "custom/spotify": {
     "format": "",
@@ -36,6 +38,11 @@
   "custom/browser": {
     "format": "󰈹",
     "on-click": "firefox",
-    "tooltip": false
+    "tooltip-format": "Firefox"
+  },
+  "custom/keepass": {
+      "format": "󰯅",
+      "on-click": "keepassxc",
+      "tooltip-format": "KeePassXC"
   }
 }

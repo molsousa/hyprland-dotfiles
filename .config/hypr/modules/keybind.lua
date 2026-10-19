@@ -25,14 +25,18 @@ end
 
 -- Example binds, see https://wiki.hypr.land/Configuring/Basics/Binds/ for more
 local closeWindowBind = hl.bind(mainMod .. " + K", hl.dsp.window.close())
-hl.bind(mainMod .. " + Q",              hl.dsp.exec_cmd(program.terminal))
+
+hl.bind(mainMod .. " + Q",              hl.dsp.exec_cmd(program.terminal,       { float = true, size = { 1320, 900 } }))
 hl.bind(mainMod .. " + M",              hl.dsp.exec_cmd("command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown || hyprctl dispatch 'hl.dsp.exit()'"))
-hl.bind(mainMod .. " + E",              hl.dsp.exec_cmd(program.fileManager))
+hl.bind(mainMod .. " + E",              hl.dsp.exec_cmd(program.fileManager,    { float = true, size = { 1320, 900 } }))
 hl.bind(mainMod .. " + V",              hl.dsp.window.float({ action = "toggle" }))
-hl.bind(mainMod .. " + R",              hl.dsp.exec_cmd(program.menu))
+hl.bind(mainMod .. " + R",              hl.dsp.exec_cmd("flock --nonblock /tmp/wofi.lock -c \"" .. program.menu .. "\""))
+hl.bind(mainMod .. " + period",         hl.dsp.exec_cmd(program.emojiPicker))
+hl.bind(mainMod .. " + C",              hl.dsp.exec_cmd(program.calc))
 hl.bind(mainMod .. " + P",              hl.dsp.window.pseudo())
 hl.bind(mainMod .. " + J",              hl.dsp.layout("togglesplit"))    -- dwindle only
 hl.bind(mainMod .. " + F",              hl.dsp.window.fullscreen())
+hl.bind(mainMod .. " + DELETE",         hl.dsp.exec_cmd(program.powerMenu))
 hl.bind(mainMod .. " + PRINT",          hl.dsp.exec_cmd("hyprshot -m window"))
 hl.bind(mainMod .. " + SHIFT + PRINT",  hl.dsp.exec_cmd("hyprshot -m region"))
 hl.bind(mainMod .. " + L",              hl.dsp.exec_cmd("hyprlock"))
@@ -40,7 +44,7 @@ hl.bind(mainMod .. " + B",              hl.dsp.exec_cmd("~/.scripts/power_profil
 hl.bind(mainMod .. " + W",              hl.dsp.exec_cmd("pgrep -x waybar && killall waybar || waybar"))
 hl.bind(mainMod .. " + F1",             hl.dsp.exec_cmd(program.emailClient))
 hl.bind(mainMod .. " + F2",             hl.dsp.exec_cmd(program.notesClient))
-hl.bind(mainMod .. " + F3",             hl.dsp.exec_cmd(program.passwordClient))
+hl.bind(mainMod .. " + F3",             hl.dsp.exec_cmd(program.passwordClient, { float = true, size = { 1320, 900 } }))
 hl.bind(mainMod .. " + F4",             hl.dsp.exec_cmd(program.browserDefault))
 hl.bind(mainMod .. " + F5",             hl.dsp.exec_cmd(program.codeDefault))
 hl.bind("PRINT",                        hl.dsp.exec_cmd("hyprshot -m output"))
@@ -123,11 +127,11 @@ hl.bind("ALT + SHIFT + TAB",    hl.dsp.window.cycle_next({ next = false }))
 hl.bind("ALT + R",              hl.dsp.submap("resize"))
 
 hl.define_submap("resize", function()
-    hl.bind("right", hl.dsp.window.resize   ({ x = 10,  y = 0,      relative = true}), {repeating = true})
-    hl.bind("left", hl.dsp.window.resize    ({ x = -10, y = 0,      relative = true}), {repeating = true})
-    hl.bind("up", hl.dsp.window.resize      ({ x = 0,   y = 10,     relative = true}), {repeating = true})
-    hl.bind("down", hl.dsp.window.resize    ({ x = 0,   y = -10,    relative = true}), {repeating = true})
-    hl.bind("escape", hl.dsp.submap("reset"))
+    hl.bind("right",    hl.dsp.window.resize        ({ x = 10,  y = 0,      relative = true}), {repeating = true})
+    hl.bind("left",     hl.dsp.window.resize        ({ x = -10, y = 0,      relative = true}), {repeating = true})
+    hl.bind("up",       hl.dsp.window.resize        ({ x = 0,   y = 10,     relative = true}), {repeating = true})
+    hl.bind("down",     hl.dsp.window.resize        ({ x = 0,   y = -10,    relative = true}), {repeating = true})
+    hl.bind("escape",   hl.dsp.submap("reset"))
 end)
 
 -- Laptop multimedia keys for volume and LCD brightness

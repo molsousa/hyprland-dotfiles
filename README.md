@@ -1,30 +1,25 @@
-## Meus dotfiles para Hyprland no Archlinux
+## .files para [![Hyprland](https://img.shields.io/badge/Hyprland-58ffff?logo=Hyprland&logoColor=333333)](#) no [![Arch Linux](https://img.shields.io/badge/Arch%20Linux-1793D1?logo=arch-linux&logoColor=fff)](#)
 
 Mistura de outros dotfiles com personalizações.
-
-
 
 ### [Waybar](https://github.com/haikal-hakim/athena/tree/main/.config/waybar)
 
 ![Waybar](./images/waybar.png)
 
+### Wofi
 
-
-### Hyprlauncher
-
-![Hyprlauncher](./images/hyprlauncher.png)
-
-
+![Wofi](./images/wofi.png)
 
 ### Terminal
 
 ![Terminal](./images/alacritty.png)
 
-
-
 ### [Hyprlock](https://github.com/MrVivekRajan/Hyprlock-Styles/tree/main/Style-9)
 
 ![Hyprlock](./images/hyprlock.png)
+
+### [Neovim](https://github.com/folke/tokyonight.nvim)
+![Neovim](./images/neovim.png)
 
 ## Plugins 
 
@@ -66,7 +61,7 @@ makepkg -si
 
 - **Hyprshot:** aplicação pra captura de tela.
 
-- **Hyprlauncher:** lançador de aplicativos.
+- **Wofi:** lançador de aplicativos.
 
 - **Hyprpm:** utilitário para uso de plugins.
 
@@ -78,14 +73,20 @@ makepkg -si
 
 - **Bluez:** gerenciador do bluetooth.
 
+- **Polkit-Gnome:** autenticador do gnome.
+
+- **Wofi-Calc:** calculadora.
+
+- **Wofi-Emoji:** seletor de emojis.
+
 ```sh
 sudo pacman -S hyprpaper
 
 sudo pacman -S hyprlock
 
-sudo pacman -S hyprshot-rs
+sudo pacman -S hyprshot
 
-sudo pacman -S hyprlauncher
+sudo pacman -S wofi
 
 sudo pacman -S hyprpm
 
@@ -96,6 +97,10 @@ sudo pacman -S waybar
 sudo pacman -S pipewire
 
 sudo pacman -S bluez bluez-utils
+
+sudo pacman -S polkit-gnome
+
+yay -S wofi-calc wofi-emoji
 ```
 
 ### Fontes

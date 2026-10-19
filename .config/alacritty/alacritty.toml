@@ -15,15 +15,15 @@ x = 5
 y = 5
 
 [font.normal]
-family = "Monospaced"
+family = "JetbrainsMono Nerd"
 style = "Plain"
 
 [font.bold]
-family = "Monospaced"
+family = "JetbrainsMono Nerd"
 style = "Bold"
 
 [font.italic]
-family = "Monospaced"
+family = "JetbrainsMono Nerd"
 style = "Italic"
 
 [font]
@@ -65,8 +65,8 @@ hide_when_typing = true
 
 [keyboard] 
 bindings = [
-	{ key = "ArrowUp", 	mods = "Control|Shift", 	action = "ScrollLineUp" },
+	{ key = "ArrowUp", 	    mods = "Control|Shift", 	action = "ScrollLineUp" },
 	{ key = "ArrowDown", 	mods = "Control|Shift", 	action = "ScrollLineDown"},
-	{ key = "Home",						action = "ScrollToTop"},
-	{ key = "End", 		 				action = "ScrollToBottom"}
+	{ key = "Home",			                            action = "ScrollToTop"},
+	{ key = "End", 		 	                            action = "ScrollToBottom"}
 ]

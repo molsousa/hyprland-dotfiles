@@ -13,7 +13,8 @@
       "custom/office",
       "custom/files",
       "custom/spotify",
-      "custom/browser"
+      "custom/browser",
+      "custom/keepass"
     ]
   },
   "group/storage": {
@@ -26,8 +27,10 @@
   "group/system": {
     "orientation": "horizontal",
     "modules": [
+      "cpu",
       "temperature",
-      "cpu"
+      "memory",
+      "disk"
     ]
   },
   "group/audio": {

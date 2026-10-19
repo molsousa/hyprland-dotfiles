@@ -116,3 +116,6 @@ ZSH_HIGHLIGHT_STYLES[command]='fg=white,bold'
 ZSH_HIGHLIGHT_STYLES[path]='fg=yellow'
 
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=8'
+
+# Unity CLI
+case ":${PATH}:" in *:"$HOME/.local/bin":*) ;; *) export PATH="$HOME/.local/bin:$PATH" ;; esac

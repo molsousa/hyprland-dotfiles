@@ -1,9 +1,18 @@
 {
   "hyprland/workspaces": {
     "format": "{icon} {windows}",
+    "format-icons": {
+      "urgent": "",
+      "active": "", // focused workspace on current monitor
+      "visible": "", // focused workspace on other monitors
+      "default": "",
+      "empty": "" // persistent (created by this plugin)
+    },
+    "on-scroll-up": "hyprctl dispatch split-cycleworkspaces -1",
+    "on-scroll-down": "hyprctl dispatch split-cycleworkspaces +1",
     "on-click": "activate",
     "persistent-workspaces": {
-      "*": 5
+      "*": 6
     },
     "window-rewrite-default": "󰊠",
     "window-rewrite": {
@@ -17,12 +26,17 @@
       "joplin": "󰹕",
       "mousepad": "󱓧",
       "thunderbird": "",
-      "kdevelop": "",
+      "kdevelop": "",
+      "eog": "󰋩",
+      "packettracer": "󰑩",
+      "gaphor": "",
+      "cpu-x": "",
       // --- Apps ---
       "discord": "",
       "spotify": "",
       "org.kde.kdeconnect.app": "󰦉",
       "org.qbittorrent.qBittorrent": "󰘿",
+      "unity": "",
       // --- Graphics & Visual ---
       "xdg-desktop-portal-gtk": "",
       "thunar": "",
@@ -39,6 +53,8 @@
       "pavucontrol": "󱕂",
       "nm-connection-editor": "󰐻",
       "virtualbox": "",
+      "polkit-gnome": "󰌾",
+      "timeshift": "󱇻",
       // --- Tool ---
       "nwg-look": "󰒓",
       "qt5ct": "󰒓",
@@ -57,6 +73,6 @@
       "empty": ""
     },
     "show-special": true,
-    "all-outputs": true
+    "all-outputs": false
   }
 }

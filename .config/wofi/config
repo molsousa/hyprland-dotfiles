@@ -1,0 +1,14 @@
+show_icons      = true
+css_file        = midnightblue/style.css
+gtk_dark        = true
+allow_images    = true
+allow_markup    = true
+width           = 500px
+height          = 400px
+hide_scroll     = true
+orientation     = vertical
+sort_order      = alphabetical
+key_expand      = Tab
+key_exit        = Escape
+filter_rate     = 100
+prompt          = Applications

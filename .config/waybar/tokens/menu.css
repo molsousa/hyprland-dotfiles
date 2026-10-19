@@ -1,0 +1,26 @@
+@import "colors.css";
+
+menu {
+    background-color: @surface_container;
+    color: #2e3436;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 6px 0;
+}
+
+menuitem {
+    border-radius: 8px;
+    padding: 8px 16px;
+    margin: 0 6px;
+    color: @secondary_fixed_dim;
+    font-weight: 500;
+}
+
+menuitem:hover {
+    background-color: #3584e4;
+    color: #ffffff;
+}
+
+separator {
+    background-color: #d3d7cf;
+    margin: 4px 8px;
+}

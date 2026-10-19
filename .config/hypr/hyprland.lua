@@ -21,4 +21,3 @@ local input = require("modules.input")
 local keybind = require("modules.keybind")
 local window_and_workspace = require("modules.window_and_workspace")
 local plugin = require("modules.plugin")
-

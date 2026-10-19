@@ -1,5 +1,4 @@
 #!/bin/bash
-
 current_profile=$(powerprofilesctl get)
 
 profiles=("power-saver" "balanced" "performance")

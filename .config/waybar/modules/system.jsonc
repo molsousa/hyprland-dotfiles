@@ -2,20 +2,21 @@
   "cpu": {
     "tooltip": false,
     "interval": 10,
-    "format": "󰻠",
-    "format-alt": "󰻠  <span size='11pt'>{usage}%</span>",
+    "format": "",
+    "format-alt": "  <span size='11pt'>{usage}%</span>",
     "states": {
       "warning": 75,
       "critical": 90
     }
-  },
+  }
+  /*
   "temperature": {
     "tooltip": false,
     "interval": 10,
-    "thermal-zone": 8,
+    "hwmon-path": "/sys/class/hwmon/hwmon4/temp1_input",
     "critical-threshold": 80,
-    "format": "{icon}",
-    "format-alt": "{icon} <span size='11pt'>{temperatureC}°C</span>",
+    "format": "󰏈",
+    "format-alt": "󰏈  <span size='11pt'>{temperatureC}°C</span>",
     "format-critical": "<span size='12pt'>󱗗 </span><span size='11pt'>{temperatureC}°C</span>",
     "format-icons": [
       "",
@@ -23,4 +24,5 @@
       ""
     ]
   }
+  */
 }
